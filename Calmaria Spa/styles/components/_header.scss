@@ -1,0 +1,75 @@
+@use '../abstract/variaveis';
+@use '../abstract/mixin';
+
+header{
+    background: variaveis.$gradiente-primario;
+    padding: 2rem;
+    
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.6rem;
+
+        .linha{
+            border-top: 1px solid black;
+            width: 80%;
+        }
+        ul{
+            display: inline-flex;
+            gap: 2rem;
+
+            li{
+                list-style-type: none;
+            }
+            a{
+                text-decoration: none;
+                @include mixin.ff-fs-fcl(variaveis.$ft-textos, 1rem, variaveis.$cor-primaria);
+                font-weight: 500;
+                &:hover{
+                    background: gray;
+                }
+            }
+        }
+     
+    }
+    #home{
+        max-width: 1440px;
+        @include mixin.margem-central(80%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .textos-home{
+            width: 464px;
+        }
+        h1{
+            @include mixin.ff-fs-fcl(variaveis.$ft-titulos, 42px, variaveis.$cor-primaria);
+            margin-bottom: 2rem;
+            span{
+                color: variaveis.$cor-secundaria;
+            }
+        }
+        .img-home{
+            max-width: 474px;
+            img{
+                width: 100%;
+              }
+          }
+        .btn-main{
+            @include mixin.ff-fs-fcl(variaveis.$ft-textos, 22px, white);
+            border-radius: 50px;
+            border: none;
+            background-color: variaveis.$cor-default;
+            width: 280px;
+            height: 66px;
+            transition: 0.3s;
+            &:hover{
+                background: variaveis.$cor-secundaria;
+            }
+            
+        }
+        
+    }
+
+}
